@@ -1,19 +1,17 @@
-// import './sass/main.scss';
 import mainTemplate from './templates/template.hbs';
+
 import mainMarkup from './menu.json';
-import { add } from 'lodash';
+
+import refs from './js/refs.js';
+
+import changeTheme from './js/themeChanger.js';
+
+import toggleValue from './js/toggleTest.js';
+
+toggleValue();
 
 const markup = mainTemplate(mainMarkup);
 
-const menuRef = document.querySelector('.js-menu');
+refs.menuRef.insertAdjacentHTML('beforeend', markup);
 
-menuRef.insertAdjacentHTML('beforeend', markup);
-
-const themeSwitchToggleRef = document.querySelector('.theme-switch__toggle');
-
-const bodyRef = document.querySelector('.js-theme');
-console.log(bodyRef);
-
-themeSwitchToggleRef.addEventListener('change', () => {
-  bodyRef.classList.toggle('dark-theme');
-});
+refs.themeSwitchToggleRef.addEventListener('change', changeTheme);
