@@ -1,5 +1,5 @@
 import refs from './refs.js';
-import { Theme } from './thems.js';
+import { Theme } from './themes.js';
 
 export default function changeTheme() {
   if (refs.themeSwitchToggleRef.checked) {
